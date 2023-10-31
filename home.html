@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroBlog</title>
+</head>
+<body>
+    <!-- The header will contain the nav bar and other info -->
+    <header class="navbar">
+        <!-- This div will contain brand content of the Blog, such as it's name and logo -->
+        <div class="navbar-brand">
+            <img src="logo.svg" alt="The MicroBlog logo">MicroBlog
+        </div>
+        <!-- Unordered list that will contain items with links -->
+        <ul class="navbar__navigation">
+            <li class="navbar-navigation-item"><a href="#">Recent</a></li> <!-- That hash '#' just means that we don't have a path for it yet -->
+            <li class="navbar-navigation-item"><a href="#">Calendar</a></li>
+        </ul>
+    </header>
+    <!-- The main will keep the form that will allow the user to add new posts and the recent posts as well -->
+    <main>
+        <!-- The first section will contain the form itself -->
+        <section>
+            <h1>Add new post</h1>
+            <!-- This is how we define a form, I've already developed some applications with flask and I've used forms so I won't explain what action and method means -->
+            <form class="form" action="/entry" method="POST">
+                <!-- The basic structure of a form should have the following: A label and an input related to the label based on the id -->
+                <label class="form-label" for="sample-field">Sample:</label>
+                <textarea class="form-textarea" name="content" id="entry"></textarea>
+                <button class="form-submit" type="submit">Submit</button>
+            </form>
+        </section>
+        <!-- The second section will contain the recent posts -->
+        <section>
+            <h1>Recent posts</h1>
+            <!-- The article will represent the post itself -->
+            <article>
+                <!-- This div will contain the 'header' of the post  -->
+                <div>
+                    <h2>The header of our post</h2>
+                    <time datetime="31-10-2023">Oct 31</time>
+                </div>
+                <!-- The paragraph will contain the description of the post -->
+                <p>
+                    Our post description
+                </p>
+            </article>
+        </section>
+    </main>
+    <!-- The footer will contain contact and about info -->
+    <footer class="footer">
+        <div class="footer-content">
+            <section class="footer-left">
+                <a class="footer-item">Made by Gabriel Chaves</a>
+                <a class="footer-item">Check out my other projects</a>
+            </section>
+            <section class="footer-right">
+                <div class="footer-column">
+                    <a class="footer-item">Recent</a>
+                    <a class="footer-item">Calendar</a>
+                </div>
+                <div class="footer-column">
+                    <a class="footer-item">About</a>
+                    <a class="footer-item">How this was made</a>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

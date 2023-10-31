@@ -25,7 +25,7 @@
         <section>
             <h1>Add new post</h1>
             <!-- This is how we define a form, I've already developed some applications with flask and I've used forms so I won't explain what action and method means -->
-            <form class="form" action="/entry" method="POST">
+            <form class="form" action="/" method="POST">
                 <p class="form-input">
                     <!-- The basic structure of a form should have the following: A label and an input related to the label based on the id -->
                     <label class="form-label" for="sample-field">Sample:</label>
@@ -37,18 +37,20 @@
         <!-- The second section will contain the recent posts -->
         <section>
             <h1>Recent posts</h1>
+            {% for entry in entries %}
             <!-- The article will represent the post itself -->
             <article class="entry">
                 <!-- This div will contain the 'header' of the post  -->
                 <div>
-                    <h2 class="entry-title">The header of our post</h2>
-                    <time class="entry-date" datetime="31-10-2023">• Oct 31</time>
+                    <h2 class="entry-title">{{ entry[0] | truncate(30, true)}}</h2>
+                    <time class="entry-date" datetime="{{ entry[1] }}">• {{ entry[1] }}</time>
                 </div>
                 <!-- The paragraph will contain the description of the post -->
                 <p class="entry-content">
-                    Our post description
+                    {{ entry[0] }}
                 </p>
             </article>
+            {% endfor %}
         </section>
     </main>
     <!-- The footer will contain contact and about info -->

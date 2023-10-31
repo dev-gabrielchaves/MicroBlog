@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>MicroBlog</title>
 </head>
 <body>
@@ -10,24 +11,26 @@
     <header class="navbar">
         <!-- This div will contain brand content of the Blog, such as it's name and logo -->
         <div class="navbar-brand">
-            <img src="logo.svg" alt="The MicroBlog logo">MicroBlog
+            <img src="logo.svg" alt="The MicroBlog logo" class="navbar-logo">MicroBlog
         </div>
         <!-- Unordered list that will contain items with links -->
-        <ul class="navbar__navigation">
+        <ul class="navbar-navigation">
             <li class="navbar-navigation-item"><a href="#">Recent</a></li> <!-- That hash '#' just means that we don't have a path for it yet -->
             <li class="navbar-navigation-item"><a href="#">Calendar</a></li>
         </ul>
     </header>
     <!-- The main will keep the form that will allow the user to add new posts and the recent posts as well -->
-    <main>
+    <main class="main">
         <!-- The first section will contain the form itself -->
         <section>
             <h1>Add new post</h1>
             <!-- This is how we define a form, I've already developed some applications with flask and I've used forms so I won't explain what action and method means -->
             <form class="form" action="/entry" method="POST">
-                <!-- The basic structure of a form should have the following: A label and an input related to the label based on the id -->
-                <label class="form-label" for="sample-field">Sample:</label>
-                <textarea class="form-textarea" name="content" id="entry"></textarea>
+                <p class="form-input">
+                    <!-- The basic structure of a form should have the following: A label and an input related to the label based on the id -->
+                    <label class="form-label" for="sample-field">Sample:</label>
+                    <textarea class="form-textarea" name="content" id="entry"></textarea>
+                </p>
                 <button class="form-submit" type="submit">Submit</button>
             </form>
         </section>
@@ -35,14 +38,14 @@
         <section>
             <h1>Recent posts</h1>
             <!-- The article will represent the post itself -->
-            <article>
+            <article class="entry">
                 <!-- This div will contain the 'header' of the post  -->
                 <div>
-                    <h2>The header of our post</h2>
-                    <time datetime="31-10-2023">Oct 31</time>
+                    <h2 class="entry-title">The header of our post</h2>
+                    <time class="entry-date" datetime="31-10-2023">• Oct 31</time>
                 </div>
                 <!-- The paragraph will contain the description of the post -->
-                <p>
+                <p class="entry-content">
                     Our post description
                 </p>
             </article>

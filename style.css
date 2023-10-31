@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /* Setting our default project font family */
+    font-family: Lato, sans-serif;
+}
+
+.navbar {
+    max-width: 640px;
+    /* Margin top and bottom = 50px and auto to left and right */
+    margin: 50px auto;
+    /* By default blocks are aligned in columns, so when we set display: flex,
+    they get align in a row. In the navbar class we have two blocks, one for the 'div' 
+    and the other for the 'ul'*/
+    display: flex;
+    /* Specifying that it needs to be aligned in a row, even though it would be the same by default */
+    flex-direction: row;
+    /* It applies the maximum space between the blocks */
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    margin-right: 30px;
+}
+
+.navbar-navigation {
+    display: flex;
+    flex-direction: row;
+    /* Gets rid of the bullet points that comes by default on the ul */
+    list-style: none;
+    padding: 0;
+    color:black
+}
+
+.navbar-navigation-item {
+    /* This will give some space between them */
+    margin-left: 30px; 
+}
+
+.navbar-navigation-item a {
+    /* This will remove the underline on the anchor element within our navigation items */
+    text-decoration: none;
+    /* Inheriting the color from it's mother class */
+    color: inherit
+}
+
+.main {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.form-input {
+    width: 100%;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-textarea {
+    width: inherit;
+    font-size: 18px;
+    padding: 12px;
+}
+
+.entry {
+    margin-top: 50px;
+}
+
+.entry-title {
+    display: inline;
+    font-size: 16px;
+}
+
+.entry-date {
+    color: #5C6B70;
+}
+
+.entry-content {
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.footer {
+    background-color: #323F43;
+    padding: 40px 0;
+    margin: 50px 0 0 0;
+    border-top: 4px solid black;
+    color: white;
+    font-size: 12px;
+}
+
+.footer-content {
+    max-width: 640px;
+    margin: 0 auto;
+	padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-left {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.footer-item {
+    margin-bottom: 5px;
+}
